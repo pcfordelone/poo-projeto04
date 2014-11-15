@@ -130,6 +130,14 @@ $clientes[9]
     ->setCnpj("99.000.000/0001-00")
 ;
 
+if (!isset($_GET['ordem'])) {
+    ksort($clientes);
+} elseif ($_GET['ordem'] == "descrescente") {
+    krsort($clientes);
+} else {
+    ksort($clientes);
+}
+
 ?>
 
 <!DOCTYPE html>
