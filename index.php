@@ -135,7 +135,7 @@ if (!isset($_GET['ordem'])) {
 } elseif ($_GET['ordem'] == "descrescente") {
     krsort($clientes);
 } else {
-    ksort($cliente);
+    ksort($clientes);
 }
 
 ?>
