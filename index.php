@@ -1,17 +1,134 @@
 <?php
 
-require_once "Cliente.php";
+define('CLASS_DIR', 'src/');
+set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
+spl_autoload_register();
 
-$clientes[0] = new Cliente (1,"Cliente01","cliente01@","000.000.000-00","Endereco 01");
-$clientes[1] = new Cliente (2,"Cliente02","cliente02@","111.000.000-00","Endereco 02");
-$clientes[2] = new Cliente (3,"Cliente03","cliente03@","222.000.000-00","Endereco 03");
-$clientes[3] = new Cliente (4,"Cliente04","cliente04@","333.000.000-00","Endereco 04");
-$clientes[4] = new Cliente (5,"Cliente05","cliente05@","444.000.000-00","Endereco 05");
-$clientes[5] = new Cliente (6,"Cliente06","cliente06@","555.000.000-00","Endereco 06");
-$clientes[6] = new Cliente (7,"Cliente07","cliente07@","666.000.000-00","Endereco 07");
-$clientes[7] = new Cliente (8,"Cliente08","cliente08@","777.000.000-00","Endereco 08");
-$clientes[8] = new Cliente (9,"Cliente09","cliente09@","888.000.000-00","Endereco 09");
-$clientes[9] = new Cliente(10,"Cliente10","cliente10@","999.000.000-00","Endereco 10");
+$clientes[0] = new FRD\Cliente\Types\ClientePFType();
+$clientes[0]
+    ->setId(1)
+    ->setNome("Cliente01")
+    ->setEmail("cliente01@")
+    ->setEndereco("Endereco01")
+    ->setGrauDeImportancia(5)
+    ->setCobrancaEspecifica(1)
+    ->setEnderecoCobranca("Endereco Cobranca 01")
+    ->setTipoDeCliente("Pessoa Física")
+    ->setCpf("000.000.00-00")
+;
+
+$clientes[1] = new FRD\Cliente\Types\ClientePFType();
+$clientes[1]
+    ->setId(2)
+    ->setNome("Cliente02")
+    ->setEmail("cliente02@")
+    ->setEndereco("Endereco02")
+    ->setGrauDeImportancia(2)
+    ->setCobrancaEspecifica(0)
+    ->setTipoDeCliente("Pessoa Física")
+    ->setCpf("111.000.00-00")
+;
+
+$clientes[2] = new FRD\Cliente\Types\ClientePFType();
+$clientes[2]
+    ->setId(3)
+    ->setNome("Cliente03")
+    ->setEmail("cliente03@")
+    ->setEndereco("Endereco03")
+    ->setGrauDeImportancia(4)
+    ->setCobrancaEspecifica(1)
+    ->setEnderecoCobranca("Endereco Cobranca 03")
+    ->setTipoDeCliente("Pessoa Física")
+    ->setCpf("222.000.00-00")
+;
+
+$clientes[3] = new FRD\Cliente\Types\ClientePFType();
+$clientes[3]
+    ->setId(4)
+    ->setNome("Cliente04")
+    ->setEmail("cliente04@")
+    ->setEndereco("Endereco04")
+    ->setGrauDeImportancia(5)
+    ->setCobrancaEspecifica(1)
+    ->setEnderecoCobranca("Endereco Cobranca 04")
+    ->setTipoDeCliente("Pessoa Física")
+    ->setCpf("333.000.00-00")
+;
+
+$clientes[4] = new FRD\Cliente\Types\ClientePFType();
+$clientes[4]
+    ->setId(5)
+    ->setNome("Cliente05")
+    ->setEmail("cliente05@")
+    ->setEndereco("Endereco04")
+    ->setGrauDeImportancia(3)
+    ->setCobrancaEspecifica(0)
+    ->setTipoDeCliente("Pessoa Física")
+    ->setCpf("444.000.00-00")
+;
+
+$clientes[5] = new FRD\Cliente\Types\ClientePJType();
+$clientes[5]
+    ->setId(6)
+    ->setNome("Cliente06")
+    ->setEmail("cliente06@")
+    ->setEndereco("Endereco06")
+    ->setGrauDeImportancia(4)
+    ->setCobrancaEspecifica(1)
+    ->setEnderecoCobranca("Endereco Cobranca 06")
+    ->setTipoDeCliente("Pessoa Jurídica")
+    ->setCnpj("55.000.000/0001-00")
+;
+
+$clientes[6] = new FRD\Cliente\Types\ClientePJType();
+$clientes[6]
+    ->setId(7)
+    ->setNome("Cliente07")
+    ->setEmail("cliente07@")
+    ->setEndereco("Endereco07")
+    ->setGrauDeImportancia(3)
+    ->setCobrancaEspecifica(1)
+    ->setEnderecoCobranca("Endereco Cobranca 07")
+    ->setTipoDeCliente("Pessoa Jurídica")
+    ->setCnpj("66.000.000/0001-00")
+;
+
+$clientes[7] = new FRD\Cliente\Types\ClientePJType();
+$clientes[7]
+    ->setId(8)
+    ->setNome("Cliente08")
+    ->setEmail("cliente08@")
+    ->setEndereco("Endereco08")
+    ->setGrauDeImportancia(5)
+    ->setTipoDeCliente("Pessoa Jurídica")
+    ->setCnpj("77.000.000/0001-00")
+;
+
+$clientes[8] = new FRD\Cliente\Types\ClientePJType();
+$clientes[8]
+    ->setId(9)
+    ->setNome("Cliente09")
+    ->setEmail("cliente09@")
+    ->setEndereco("Endereco09")
+    ->setGrauDeImportancia(5)
+    ->setCobrancaEspecifica(1)
+    ->setEnderecoCobranca("Endereco Cobranca 09")
+    ->setTipoDeCliente("Pessoa Jurídica")
+    ->setCnpj("88.000.000/0001-00")
+;
+
+$clientes[9] = new FRD\Cliente\Types\ClientePJType();
+$clientes[9]
+    ->setId(10)
+    ->setNome("Cliente10")
+    ->setEmail("cliente10@")
+    ->setEndereco("Endereco10")
+    ->setGrauDeImportancia(4)
+    ->setCobrancaEspecifica(1)
+    ->setEnderecoCobranca("Endereco Cobranca 06")
+    ->setTipoDeCliente("Pessoa Jurídica")
+    ->setCnpj("99.000.000/0001-00")
+;
 
 ?>
 
@@ -43,13 +160,35 @@ $clientes[9] = new Cliente(10,"Cliente10","cliente10@","999.000.000-00","Enderec
         <div class="col-md-12 column">
             <h3>Lista de Clientes</h3>
 
-            <?php if (isset($_REQUEST['id'])) : $id = $_GET['id'] - 1; ?>
-                <h3>Nome: <?php echo $clientes[$id]->nome ?></h3>
-                <p>Email: <?php echo $clientes[$id]->email ?></p>
-                <p>Email: <?php echo $clientes[$id]->cpf ?></p>
-                <p>Email: <?php echo $clientes[$id]->endereco ?></p>
-                <a href="/">voltar</a>
-            <?php else : ?>
+            <?php
+            if (isset($_REQUEST['id'])) :
+                $id = $_REQUEST['id'] - 1;
+                if ($clientes[$id]->getTipoDeCliente() == "Pessoa Física") : ?>
+                    <p><b>Nome: </b><?php echo $clientes[$id]->getNome() ?></p>
+                    <p><b>E-mail: </b><?php echo $clientes[$id]->getEmail() ?></p>
+                    <p><b>Endereço: </b><?php echo $clientes[$id]->getEndereco() ?></p>
+                    <p><b>CPF: </b><?php echo $clientes[$id]->getCpf() ?></p>
+                    <p><b>Grau de Importância: </b><?php echo $clientes[$id]->getGrauDeImportancia() ?></p>
+                    <?php
+                    if ($clientes[$id]->getCobrancaEspecifica()) :
+                        echo "<p><b>Endereço de Cobrança: </b>".$clientes[$id]->getEnderecoCobranca()."</p>";
+                    else :
+                        echo "<p><b>Endereço de Cobrança: </b>".$clientes[$id]->getEndereco()."</p>";
+                    endif;
+
+                else : ?>
+                    <p><b>Nome: </b><?php echo $clientes[$id]->getNome() ?></p>
+                    <p><b>E-mail: </b><?php echo $clientes[$id]->getEmail() ?></p>
+                    <p><b>Endereço: </b><?php echo $clientes[$id]->getEndereco() ?></p>
+                    <p><b>CNPJ: </b><?php echo $clientes[$id]->getCnpj() ?></p>
+                    <p><b>Grau de Importância: </b><?php echo $clientes[$id]->getGrauDeImportancia() ?></p>
+                    <?php
+                    if ($clientes[$id]->getCobrancaEspecifica()) :
+                        echo "<p><b>Nome: </b>".$clientes[$id]->getEnderecoCobranca()."</p>";
+                    endif;
+                endif;
+                echo "<a href='/'>Voltar</a>";
+            else : ?>
 
             <div class="btn-group btn-group-xs">
                 <a href="/?ordem=crescente" class="btn btn-default">
@@ -70,18 +209,16 @@ $clientes[9] = new Cliente(10,"Cliente10","cliente10@","999.000.000-00","Enderec
                     <th>ID</th>
                     <th>Nome</th>
                     <th>E-mail</th>
-                    <th>CPF</th>
-                    <th>Endereço</th>
+                    <th>Pessoa Física/Jurídica</th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php foreach ($clientes as $value) : ?>
                 <tr>
-                    <td><?php echo $value->id ?></td>
-                    <td><a href="/?id=<?php echo $value->id ?>"><?php echo $value->nome ?></a></td>
-                    <td><?php echo $value->email ?></td>
-                    <td><?php echo $value->cpf ?></td>
-                    <td><?php echo $value->endereco ?></td>
+                    <td><?php echo $value->getId() ?></td>
+                    <td><a href="/?id=<?php echo $value->getId() ?>"><?php echo $value->getNome() ?></a></td>
+                    <td><?php echo $value->getEmail() ?></td>
+                    <td><?php echo $value->getTipoDeCliente() ?></td>
                 </tr>
                 </tbody>
                 <?php endforeach ?>
