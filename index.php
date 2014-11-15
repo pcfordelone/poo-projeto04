@@ -135,7 +135,7 @@ if (!isset($_GET['ordem'])) {
 } elseif ($_GET['ordem'] == "descrescente") {
     krsort($clientes);
 } else {
-    ksort($clientes);
+    ksort($cliente);
 }
 
 ?>
@@ -176,7 +176,15 @@ if (!isset($_GET['ordem'])) {
                     <p><b>E-mail: </b><?php echo $clientes[$id]->getEmail() ?></p>
                     <p><b>Endereço: </b><?php echo $clientes[$id]->getEndereco() ?></p>
                     <p><b>CPF: </b><?php echo $clientes[$id]->getCpf() ?></p>
-                    <p><b>Grau de Importância: </b><?php echo $clientes[$id]->getGrauDeImportancia() ?></p>
+                    <p><b>Grau de Importância: </b>
+                    <?php
+                        $grau = $clientes[$id]->getGrauDeImportancia();
+                        for ($i=0; $i<$grau; $i++) {
+                        echo "<span class='glyphicon glyphicon-star'></span>";
+                        }
+                    ?>
+                    </p>
+
                     <?php
                     if ($clientes[$id]->getCobrancaEspecifica()) :
                         echo "<p><b>Endereço de Cobrança: </b>".$clientes[$id]->getEnderecoCobranca()."</p>";
@@ -189,7 +197,14 @@ if (!isset($_GET['ordem'])) {
                     <p><b>E-mail: </b><?php echo $clientes[$id]->getEmail() ?></p>
                     <p><b>Endereço: </b><?php echo $clientes[$id]->getEndereco() ?></p>
                     <p><b>CNPJ: </b><?php echo $clientes[$id]->getCnpj() ?></p>
-                    <p><b>Grau de Importância: </b><?php echo $clientes[$id]->getGrauDeImportancia() ?></p>
+                    <p><b>Grau de Importância: </b>
+                        <?php
+                            $grau = $clientes[$id]->getGrauDeImportancia();
+                            for ($i=0; $i<$grau; $i++) {
+                                echo "<span class='glyphicon glyphicon-star'></span>";
+                            }
+                        ?>
+                    </p>
                     <?php
                     if ($clientes[$id]->getCobrancaEspecifica()) :
                         echo "<p><b>Nome: </b>".$clientes[$id]->getEnderecoCobranca()."</p>";
